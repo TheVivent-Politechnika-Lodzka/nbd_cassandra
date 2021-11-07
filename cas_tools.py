@@ -1,5 +1,4 @@
 from cassandra.cluster import Cluster
-from cassandra.policies import ReconnectionPolicy
 from cassandra.query import dict_factory
 import random
 import string

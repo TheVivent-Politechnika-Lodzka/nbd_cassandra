@@ -1,7 +1,4 @@
-from random import seed
-from threading import current_thread
-from typing import Counter
-from cas_tools import get_session, get_id, json_review_validation
+from cas_tools import get_session, json_review_validation
 from flask import Flask, jsonify
 from flask import request
 
