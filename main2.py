@@ -13,12 +13,12 @@ PAGE_SIZE = 2
 app = Flask(__name__)
 
 
-@app.route('/reviews', methods=['GET'])
-def get_reviews():
+@app.route('/reviews/', defaults={'page': 1}, methods=['GET'])
+@app.route('/reviews/<int:page>', methods=['GET'])
+def get_reviews(page):
     """
     Get all reviews
     """
-    page = int(request.args.get('page', 1))
     session = get_session()
     reviews = session.execute('SELECT * FROM reviews_by_review_id')
     current_reviews = []
